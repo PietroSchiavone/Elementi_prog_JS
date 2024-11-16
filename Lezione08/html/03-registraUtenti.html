@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/normalize1.css">
+<link rel="stylesheet" href="../css/themify-icons.css">
+</head>
+<body>
+
+
+  <div class="header2"> 
+    <div class="wrapper">
+
+      <div class="hero">
+        <div class="container"> 
+         
+
+          <i class="ti-time"></i>
+    
+          <div class="main-moment data">
+            <div class="data-moment">
+              <div>
+                <p class="data_center" id="data"></p>
+              </div>
+              <div>
+                <p class="time_center" id="time"></p>
+              </div>
+              </div>
+          </div>
+
+              <div class="main-wrapper">
+                <div class="box1">
+
+                  <div id="input" class="box">
+                    <h3><i class="ti-write"></i> Compila i campi</h3>
+                    
+                    <input type="text" id="nome" placeholder="inserisci il nome"><br>
+                    <input type="text" id="cognome" placeholder="inserisci il cognome"><br>
+                    <input type="text" id="corso" placeholder="inserisci il corso"><br>
+                    <div id="errors"></div>
+                    <select id="ruolo">
+                      
+                      <option value="" selected disabled>Seleziona un ruolo</option>
+                      <option value="studente">Studente</option>
+                      <option value="docente">Docente</option>
+                      <option value="responsabile">Responsabile</option>
+                      
+                    </select>
+                  </div>
+                </div>
+
+                <div class="button">                  
+                  <button id="btnRec">Registra Utente</button> <br>
+                  <button id="btnStmpLista">Stampa lista</button>                  
+                </div>
+                <div class="box2">
+                  <div class="box box3">
+                    <h3><i class="ti-list"></i> Lista Utenti</h3>
+                  
+                    <ul id="lista"></ul>
+                  </div>
+              </div>
+            </div>
+          
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.js" integrity="sha512-STI3jX2gEOm2Z4JLWBX1XqsXzHLXmK9H+c94IBv3AfM/w2w3zQfP05EZ/Zi4P/uBajPi2SAmdFxQ1UWQtt7gsA==" crossorigin="anonymous"></script>
+          <script src="js/03.js"></script>
+
+  <script src="../js/03.js"></script>
+  </div>
+</body>
+</html>

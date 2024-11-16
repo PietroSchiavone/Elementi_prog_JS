@@ -1,0 +1,73 @@
+<!-- sfruttando gli eventi crea un form per registrare:
+ -nome
+ -cognome
+ -email
+ -num telefono
+ -ruolo (select -> option)
+ 
+ quando cliccosul pulsante submit dovrò registrare l'utente.
+ controllare i campi nel seguente modo:
+ nome e cognome > 1
+ email deve contenere @ e almeno un .
+ num telefono > 8 caratteri numerici
+ 
+ il controllo va eseguito al blur su ogni campo. sotto ogni voce deve esserci un div per il feedback-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
+ <body>
+
+    <div class="container">
+        <div class="all-wrapper">
+            <h1>Form!!!</h1>
+            <form id="mioForm" action="grazie.html" method="get">
+                <div class="campi-wrapper">
+                    <input type="text" id="nome" placeholder="Nome" name="nome" class="textbox"> <br>
+                    <div id="fNome" class="feedback"></div>
+                </div>
+                <div class="campi-wrapper">
+                    <input type="text" id="cognome" placeholder="Cognome" name="cognome" class="textbox"> <br>
+                    <div id="fCognome" class="feedback"></div>
+                </div>
+                <div class="campi-wrapper">
+                    <input type="text" id="email" placeholder="E-mail" name="email" class="textbox"> <br>
+                    <div id="fMail" class="feedback"></div>
+                </div>
+                <div class="campi-wrapper">
+                    <input type="text" id="numTel" placeholder="Numero Telefonico" name="numTel" class="textbox"> <br>
+                    <div id="fTel" class="feedback"></div>
+                </div>
+                <div class="campi-wrapper">
+                    <select id="ruolo" class="selector">
+            
+                        <option value="" selected disabled>Seleziona un ruolo</option>
+                        <option value="studente">Studente</option>
+                        <option value="docente">Docente</option>
+                        <option value="responsabile">Responsabile</option>
+            
+                    </select>
+                    <div id="fRuolo" class="feedbackRuolo"></div>
+                </div>
+                <div class="pulsanti-wrapper">
+                    <input type="submit" value="Invia" class="pulsanti invio"> <br>
+                    <input type="reset" value="Reset" class="pulsanti reset">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/04.js"></script>
+ </body>
+ </html>
