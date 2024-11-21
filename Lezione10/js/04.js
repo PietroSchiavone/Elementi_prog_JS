@@ -9,30 +9,16 @@ class Pizza{
 let listaPizze = [];
 
 
-// listaPizze.push(pizza1);
-
-// let listaPizzeJson = JSON.stringify(listaPizze);
-
-// localStorage.setItem("listaPizze", listaPizzeJson)
-
-
-
-// -----------------------------------------------------------------------------------------------------
-
 let feedNome = document.querySelector("#feedNome");
 let feedPrezzo = document.querySelector("#feedPrezzo");
-let feedIngrediente1 = document.querySelector("#feedIngrediente1");
-let feedIngrediente2 = document.querySelector("#feedIngrediente2");
-let feedIngrediente3 = document.querySelector("#feedIngrediente3");
+let feedIngredienti = document.querySelector("#feedIngredienti");
 
 let nome = document.querySelector("#nome");
 let prezzo = document.querySelector("#prezzo");
-let ingrediente1 = document.querySelector("#ingrediente1");
-let ingrediente2 = document.querySelector("#ingrediente2");
-let ingrediente3 = document.querySelector("#ingrediente3");
+let ingredienti = document.querySelector("#ingredienti");
 
 let formRegPizza = document.querySelector("#formRegPizza");
-
+let reset = document.querySelector("#reset")
 
 
 function registraPizza(event) {
@@ -40,15 +26,17 @@ function registraPizza(event) {
     listaPizze = JSON.parse(localStorage.getItem("listaPizze"));
     let nome = document.querySelector("#nome").value;
     let prezzo = document.querySelector("#prezzo").value;
-    let ingrediente1 = document.querySelector("#ingrediente1").value;
-    let ingrediente2 = document.querySelector("#ingrediente2").value;
-    let ingrediente3 = document.querySelector("#ingrediente3").value;
+    let ingredienti = document.querySelector("#ingredienti").value;
 
-    if(checkNome(nome) && checkprezzo(prezzo) && checkingrediente1(ingrediente1) && checkingrediente2(ingrediente2) && checkingrediente3(ingrediente3)){
+    
+    if(checkNome(nome) && checkPrezzo(prezzo) && checkIngredienti(ingredienti)){
         
-        let ingredienti = [ingrediente1, ingrediente2, ingrediente3];
+        let ingredientiArray = ingredienti.split(" ");
 
-        let miaPizza = new Pizza(nome, prezzo, ingredienti);
+        console.log(ingredientiArray    );
+        
+
+        let miaPizza = new Pizza(nome, prezzo, ingredientiArray);
 
         listaPizze.push(miaPizza);
 
@@ -64,6 +52,12 @@ function registraPizza(event) {
 
 }
 
+reset.addEventListener("click", function () {
+
+    localStorage.setItem("listaPizze", "");
+    demo.innerHTML = ""
+})
+
 formRegPizza.addEventListener("submit", registraPizza);
 
 nome.addEventListener("blur", function(){
@@ -73,23 +67,14 @@ nome.addEventListener("blur", function(){
 
 prezzo.addEventListener("blur", function(){
     let prezzo = document.querySelector("#prezzo").value;
-    checkprezzo(prezzo);
+    checkPrezzo(prezzo);
 })
 
-ingrediente1.addEventListener("blur", function(){
-    let ingrediente1 = document.querySelector("#ingrediente1").value;
-    checkingrediente1(ingrediente1);
+ingredienti.addEventListener("blur", function(){
+    let ingredienti = document.querySelector("#ingredienti").value;
+    checkIngredienti(ingredienti);
 })
 
-ingrediente2.addEventListener("blur", function(){
-    let ingrediente2 = document.querySelector("#ingrediente2").value;
-    checkingrediente2(ingrediente2);
-})
-
-ingrediente3.addEventListener("blur", function(){
-    let ingrediente3 = document.querySelector("#ingrediente3").value;
-    checkingrediente3(ingrediente3);
-})
 
 
 function checkNome(nome){
@@ -102,7 +87,7 @@ function checkNome(nome){
     }
 }
 
-function checkprezzo(prezzo){
+function checkPrezzo(prezzo){
     if(prezzo != ""){
         feedPrezzo.textContent = "";
         return true;
@@ -113,35 +98,14 @@ function checkprezzo(prezzo){
 }
 
 
-function checkingrediente1(ingrediente1){
+function checkIngredienti(ingredienti){
     
-    if(ingrediente1 != ""){
-        feedIngrediente1.textContent = "";
+    if(ingredienti != ""){
+        feedIngredienti.textContent = "";
         return true;
     }else{
-        feedIngrediente1.textContent = "ingrediente1 non selezionato";
+        feedIngredienti.textContent = "ingredienti non selezionato";
         return false;
     }
 
-}
-
-function checkingrediente2(ingrediente2){
-    
-    if(ingrediente2 != ""){
-        feedIngrediente2.textContent = "";
-        return true;
-    }else{
-        feedIngrediente2.textContent = "ingrediente2 non selezionato";
-        return false;
-    }
-}
-
-function checkingrediente3(ingrediente3){
-    if(ingrediente3 != ""){
-        feedIngrediente3.textContent = "";
-        return true;
-    }else{
-        feedIngrediente3.textContent = "ingrediente3 non selezionato"
-        return false;
-    }
 }

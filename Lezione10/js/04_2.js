@@ -15,6 +15,7 @@ let demo = document.querySelector("#demo");
 let stampa = document.querySelector("#stampa");
 
 function stampaMenu() {
+    demo.innerHTML = ""
     pizze.forEach(pizza => {
         demo.innerHTML += `<li> ${pizza.nome} - ${pizza.prezzo} € - ${pizza.ingredienti}`
     });
