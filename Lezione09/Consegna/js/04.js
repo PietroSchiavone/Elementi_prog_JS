@@ -148,30 +148,8 @@ mioForm.addEventListener("submit", function (event) {
     const isRuoloValido = validaRuolo();
 
     if (!isNomeValido || !isCognomeValido || !isEmailValida || !isNumeroValido || !isRuoloValido) {
-        event.preventDefault(); // Blocca l'invio del form
+        event.preventDefault();
         alert("Compila tutti i campi prima di inviare il form.");
     }
+
 });
-
-function aggiungiUser() {
-    let nomeValue = nome.value; 
-    let cognomeValue = cognome.value;
-    let emailValue = email.value;
-    let numTelValue = numTel.value;
-    let ruoloValue = ruolo.value;
-
-    // Controllo dei campi
-    if (!controllaCampiForm(nomeValue, cognomeValue, emailValue, numTelValue, ruoloValue)) {
-        return;
-    }
-
-    let nuovoUtente = new Utente(nomeValue, cognomeValue, emailValue, numTelValue, ruoloValue);
-    console.log("Utente aggiunto:", nuovoUtente);
-
-    // Reset dei campi
-    nome.value = "";
-    cognome.value = "";
-    email.value = "";
-    numTel.value = "";
-    ruolo.value = "";
-}
