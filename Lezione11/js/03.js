@@ -1,5 +1,6 @@
 let btn = document.querySelector("#btn");
 let demo = document.querySelector("#demo");
+let bottone = document.querySelector("#bottone");
 
 function recuperaDati() {
     
@@ -14,6 +15,8 @@ function recuperaDati() {
 
         commenti = data.comments;
         console.log(commenti);
+        bottone.innerHTML = "Clicca sui nomi per visualizzare il commento";
+
         
 
         commenti.forEach(commento => {
