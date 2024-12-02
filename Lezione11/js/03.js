@@ -44,5 +44,3 @@ function creaCard(commento) {
 
     return card;
 }
-
-btn.addEventListener("click", recuperaDati);
